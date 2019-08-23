@@ -1,14 +1,24 @@
 package com.ericles.cursomc.resources;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.ericles.cursomc.domain.Categoria;
 
 @RestController
 @RequestMapping(value = "/categorias") //Endpoint Rest
 public class CategoriaResource {
 	@RequestMapping(method=RequestMethod.GET)
-	public String Listar() {
-		return "Rest está funcionando!";
+	public List<Categoria> Listar() {
+		Categoria categ1 = new Categoria("1", "Informática");
+		Categoria categ2 = new Categoria("2", "Escritório");
+		List<Categoria> lista = new ArrayList<>();
+		lista.add(categ1);
+		lista.add(categ2);
+		return lista;
 	}
 }
