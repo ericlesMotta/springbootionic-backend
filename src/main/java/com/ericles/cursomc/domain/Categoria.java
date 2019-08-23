@@ -12,10 +12,12 @@ public class Categoria implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY) //Anotações spring para gerar o DB automaticamente
+	private Integer id;
 	private String nome;
 	
+	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -45,7 +47,7 @@ public class Categoria implements Serializable {
 		
 	}
 	
-	public Categoria (String id, String nome) {
+	public Categoria (Integer id, String nome) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -58,10 +60,10 @@ public class Categoria implements Serializable {
 		this.nome = nome;
 	}
 	
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 }
