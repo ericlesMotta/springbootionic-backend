@@ -12,9 +12,9 @@ import com.ericles.cursomc.services.exceptions.ObjectNotFoundException;
 @ControllerAdvice
 public class ResourceExceptionHandler {
 	@ExceptionHandler(ObjectNotFoundException.class)
-	ResponseEntity<StandardError> objectNotFound(ObjectNotFoundException e,HttpServletRequest request){
+	ResponseEntity<StandardError> objectNotFound(ObjectNotFoundException e, HttpServletRequest request) {
 		StandardError err = new StandardError(HttpStatus.NOT_FOUND.value(), e.getMessage(), System.currentTimeMillis());
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(err);
-		
+
 	}
 }
