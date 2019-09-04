@@ -1,0 +1,24 @@
+package com.ericles.cursomc.resources;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ericles.cursomc.domain.Pedido;
+import com.ericles.cursomc.services.PedidoService;
+
+@RestController
+@RequestMapping(value = "/pedidos") //Endpoint Rest Mapeamento do Spring para caracterizar o código como um endpoint REST
+public class PedidoResource {
+	@Autowired
+	private PedidoService pedido;
+	
+	@RequestMapping(value = "/{id}",method=RequestMethod.GET) 
+	public ResponseEntity<?> find(@PathVariable Integer id) {
+		Pedido obj = pedido.find(id);
+		return ResponseEntity.ok().body(obj);
+	}
+}
