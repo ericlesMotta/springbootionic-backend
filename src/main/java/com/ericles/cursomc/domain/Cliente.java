@@ -27,6 +27,7 @@ public class Cliente implements Serializable {
 	private String nome;
 	private String email;
 	private String cpfOuCnpj;
+	private Integer tipo;
 
 	@Override
 	public int hashCode() {
@@ -53,7 +54,6 @@ public class Cliente implements Serializable {
 		return true;
 	}
 
-	private Integer tipo;
 	
 	@OneToMany (mappedBy = "cliente")
 	private List<Endereco> enderecos = new ArrayList<>();
