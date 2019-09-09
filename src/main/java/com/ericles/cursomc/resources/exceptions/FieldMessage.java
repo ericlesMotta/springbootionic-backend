@@ -3,19 +3,18 @@ package com.ericles.cursomc.resources.exceptions;
 import java.io.Serializable;
 
 public class FieldMessage implements Serializable {
-
 	private static final long serialVersionUID = 1L;
+	
 	private String fieldName;
-	private String nome;
-
+	private String message;
+	
 	public FieldMessage() {
-
 	}
 
-	public FieldMessage(String fieldName, String nome) {
+	public FieldMessage(String fieldName, String message) {
 		super();
 		this.fieldName = fieldName;
-		this.nome = nome;
+		this.message = message;
 	}
 
 	public String getFieldName() {
@@ -26,12 +25,13 @@ public class FieldMessage implements Serializable {
 		this.fieldName = fieldName;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getMessage() {
+		return message;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setMessage(String message) {
+		this.message = message;
 	}
-
 }
+
+
