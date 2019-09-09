@@ -95,6 +95,14 @@ public class Pedido implements Serializable {
 	public Date getInstante() {
 		return instante;
 	}
+	
+	public double getValorTotal() {
+		double soma =0.0;
+		for (ItemPedido ip :  itens) {
+			soma = soma+ip.getSubTotal();
+		}
+		return soma;
+	}
 
 
 	public void setInstante(Date instante) {
