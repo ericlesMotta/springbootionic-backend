@@ -15,7 +15,6 @@ import com.ericles.cursomc.domain.enums.EstadoPagamento;
 import com.ericles.cursomc.repositories.ItemPedidoRepository;
 import com.ericles.cursomc.repositories.PagamentoRepository;
 import com.ericles.cursomc.repositories.PedidoRepository;
-import com.ericles.cursomc.repositories.ProdutoRepository;
 import com.ericles.cursomc.services.exceptions.ObjectNotFoundException;
 
 @Service // Marcação do Spring para Service
@@ -29,9 +28,7 @@ public class PedidoService {
 	@Autowired
 	private PagamentoRepository pagamentoRespository;
 	
-	@Autowired 
-	private ProdutoRepository produtoRepository;
-	
+		
 	@Autowired 
 	private ProdutoService produtoService;
 	@Autowired
