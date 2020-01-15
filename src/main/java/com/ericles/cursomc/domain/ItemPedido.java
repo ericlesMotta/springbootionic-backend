@@ -10,6 +10,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class ItemPedido implements  Serializable {
 	
+
+
+
 	private static final long serialVersionUID = 1L;
 	
 	
@@ -122,6 +125,25 @@ public class ItemPedido implements  Serializable {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
+	}
+	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append(getProduto().getNome());
+		builder.append(", Qte");
+		builder.append(getQuantidade());
+		builder.append(", Preço unitario");
+		builder.append(getPreco());
+		builder.append(", Subtotal");
+		builder.append(getSubTotal());
+		builder.append("\n");
+		return builder.toString();
+
+
+
+
+
 	}
 	
 }

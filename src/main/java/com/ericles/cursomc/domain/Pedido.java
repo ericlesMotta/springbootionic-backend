@@ -148,6 +148,16 @@ public class Pedido implements Serializable {
 	public void setItens(Set<ItemPedido> pedidos) {
 		this.itens = pedidos;
 	}
+
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Pedido [id=");
+		builder.append(id);
+		builder.append("]");
+		return builder.toString();
+	}
 	
 	
 }
